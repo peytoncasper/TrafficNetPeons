@@ -26,7 +26,7 @@ The use and operation of the camera shall be at the discretion of the administra
 \vspace{0.5 in}
 \begin{figure}[h!]
 	\centering
-   	\includegraphics[width=0.60\textwidth]{images/camera_operation_UML.jpg}
+   	\includegraphics[width=0.60\textwidth]{images/camera_operation_UML}
 \end{figure}
 \vspace{0.5 in}
 \subsection{Adjusting the Camera}

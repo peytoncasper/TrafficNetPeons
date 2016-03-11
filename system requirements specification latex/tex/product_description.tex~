@@ -32,5 +32,7 @@ Image Feed & Provides a stream of the camera & The camera will provide a stream 
    	\includegraphics[width=0.45\textwidth]{images/UI_Mockup.jpg}
 \end{figure}
 
+
+
 The Image feed can be seen in the center of Figure 1.2 and the various controls as specified in the External Inputs can been seen along the side of the camera feed. The various controls start at the top on the right side and will be buttons that the user can interact with. Starting at the top is the zoom control followed by the pan and tilt controls.
 

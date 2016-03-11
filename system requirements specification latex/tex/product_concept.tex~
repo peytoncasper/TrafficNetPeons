@@ -8,7 +8,7 @@ The camera will stream image data at a minimum of 10 FPS, support 10x zoom, have
 The camera is being designed and created for Traffic Net and is being target torward government agencies such as the Texas Department of Transportation. This product is meant to provide a durable and cheap replacement for existing products while being targeted for remote locations where extensive iternet infrastructure has not been laid.
 
 
-\subsection{Figure 1.1}
+Figure 1.1
 \begin{figure}[h!]
 	\centering
    	\includegraphics[width=0.45\textwidth]{images/Product_Mockup.jpg}

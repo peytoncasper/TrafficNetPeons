@@ -74,9 +74,9 @@
 \vspace{0.5 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
 \vspace{0.5 in}
+
 {\centering \large \sc \textbf{\authors} \par}
 \newpage
-
 %\vspace{1 in}
 %\centerline{January 13th, 2012}
 %\newpage
