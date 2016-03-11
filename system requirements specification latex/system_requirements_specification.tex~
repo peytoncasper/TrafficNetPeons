@@ -74,9 +74,9 @@
 \vspace{0.5 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
 \vspace{0.5 in}
-
 {\centering \large \sc \textbf{\authors} \par}
 \newpage
+
 %\vspace{1 in}
 %\centerline{January 13th, 2012}
 %\newpage
@@ -124,8 +124,11 @@
 \section{Other Requirements}
 \input{tex/other_requirements.tex}
 \newpage
-\section{Use Cases}
+\section{Acceptance Criteria}
 \input{tex/use_cases.tex}
+\newpage
+\section{Use Cases}
+\input{tex/acceptance_criteria.tex}
 \newpage
 \section{Feasibility Assessment}
 \input{tex/feasibility_assessment}

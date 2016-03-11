@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.2.18)  11 MAR 2016 03:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.2.18)  11 MAR 2016 08:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -712,8 +712,9 @@ LaTeX Font Info:    Font shape `T1/mdbch/b/fsc' will be
 [11] (./tex/packaging_requirements.tex) [12]
 (./tex/performance_requirements.tex [13]) [14] (./tex/safety_requirements.tex)
 [15] (./tex/maintenance_support_requirements.tex [16]) [17]
-(./tex/other_requirements.tex) [18] (./tex/use_cases.tex
-<images/camera_operation_UML.jpg, id=66, 453.94594pt x 457.71pt>
+(./tex/other_requirements.tex) [18] (./tex/acceptance_criteria.tex) [19]
+(./tex/use_cases.tex
+<images/camera_operation_UML.jpg, id=70, 453.94594pt x 457.71pt>
 File: images/camera_operation_UML.jpg Graphic file (type jpg)
 
 <use images/camera_operation_UML.jpg>
@@ -728,13 +729,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 l.44 \subsubsectio
                   {Scenario}
 ? 
-[19]) [20 <./images/camera_operation_UML.jpg>]
-(./tex/feasibility_assessment.tex [21]) [22] (./tex/future_items.tex [23])
-[24]
-No file system_requirements_specification.bbl.
+[20]) [21 <./images/camera_operation_UML.jpg>]
+(./tex/feasibility_assessment.tex [22]) [23] (./tex/future_items.tex [24])
+[25] (./system_requirements_specification.bbl
 
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) 
 AED: lastpage setting LastPage
-(./system_requirements_specification.aux)
+[26] (./system_requirements_specification.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -744,23 +747,23 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ### simple group (level 1) entered at line 66 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6044 strings out of 493085
- 83034 string characters out of 6136917
+ 6049 strings out of 493085
+ 83185 string characters out of 6136917
  152947 words of memory out of 5000000
  9299 multiletter control sequences out of 15000+600000
  60304 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,43p,921b,668s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,43p,921b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc
 }</usr/share/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb8t.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb>
-Output written on system_requirements_specification.pdf (24 pages, 2419896 byte
+Output written on system_requirements_specification.pdf (26 pages, 2421984 byte
 s).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
