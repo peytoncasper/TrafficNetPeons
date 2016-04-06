@@ -125,10 +125,10 @@
 \input{tex/other_requirements.tex}
 \newpage
 \section{Acceptance Criteria}
-\input{tex/acceptance_criteria.tex}
+\input{tex/use_cases.tex}
 \newpage
 \section{Use Cases}
-\input{tex/use_cases.tex}
+\input{tex/acceptance_criteria.tex}
 \newpage
 \section{Feasibility Assessment}
 \input{tex/feasibility_assessment}

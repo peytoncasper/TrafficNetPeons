@@ -62,11 +62,11 @@ Critical
 
 \subsection{Maximum of 5W Power Consumption}
 \subsubsection{Description}
-The camera will be required to run on a maximum of 5W of power to ensure the solar panel can effectivly power the camera.
+The camera will have the ability to resist certain weather conditions such as snow and rain.
 \subsubsection{Source}
 Traffic Net
 \subsubsection{Constraints}
-None
+The camera will only be rated for a certain temperature range and if exceeded could damage the camera.
 \subsubsection{Standards}
 None
 \subsubsection{Priority}

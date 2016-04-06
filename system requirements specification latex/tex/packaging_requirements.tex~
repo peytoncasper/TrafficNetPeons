@@ -24,7 +24,7 @@ The product shall provide the software required for operation of the camera.
 \subsubsection{Source}
 Traffic Net
 \subsubsection{Constraints}
-None
+The Software will only be compatible with Windows OS for time being.
 \subsubsection{Standards}
 None
 \subsubsection{Priority}
