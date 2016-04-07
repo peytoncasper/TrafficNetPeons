@@ -10,13 +10,16 @@ In our system there are four main layers, which are classified as web interface 
 \subsection{Layer Web Interface Description}
 The web interface layer provides high level interface for the user to communicate with the hardware or camera layer. Our system is going to have login, feedback and arrow keys. User will simply have to login for the security purpose. Each and every camera will have its unique IP, which will provide identity to the camera. For time being the username and the password will be saved in the raspberry pi, which is integrated in the camera. Feedback means the live streaming video or image captured by the camera. There are arrow keys buttons, which will help user to control the functions of the camera. Functions of the camera includes rotating and tilting camera, which is 180-degree rotation and 180-degree tilt. The movement of the camera is 360-degree total including rotation and tilting.
 
+\subsection{Layer Wireless Communication Description}
+Wireless Communication Layer provide the platform for the user to communicate with the camera remotely. Wireless communication layer includes Ethernet and black box as the two subsystems. Black box is provided by the Traffic Net, who is our project sponsor. Ethernet is connected with black box and the raspberry pi. Here, raspberry pi is the part of the camera layer. This layer provides the connection between user and camera layer, which is secured by requiring user to login in web interface layer by using username and password.
 
 \subsection{Layer Camera Description}
 Camera layer will provide user with high level interface layer to communicate and control hardware devices. This layer includes camera module, stepper motors, lens, raspberry pi, stepper motor driver and database. The Ethernet connection connected with raspberry pi is working as the medium to connect raspberry pi with the black box. ZeroMQ library has been installed in raspberry pi, which helps receive and send messages back and forth. Two stepper motors have been integrated, whose movement is controlled by the stepper motor drivers. The stepper motor driver has been installed in the raspberry pi. Lens is integrated with the camera module, which is tilted and rotated by the stepper motors. For time being our system is going to have a database that will save the username and password in the raspberry pi. This is the only layer of security we have it in our system, which will prevent unauthorized access.
 
+\subsection{Layer Base Station Description}
+Base Station Layer is the source of power of the whole system except web interface layer. This layer provide power for wireless communication layer and the camera layer. The camera layer requires the power of 5 volts. Solar battery system is included in the base station layer, which means solar battery is used as a source of energy.
 
 
 
-\subsection{Layer Wireless Communication Description}
-Wireless Communication Layer provide the platform for the user to communicate with the camera remotely. Wireless communication layer includes Ethernet and black box as the two subsystems. Black box is provided by the Traffic Net, who is our project sponsor. Ethernet is connected with black box and the raspberry pi. Here, raspberry pi is the part of the camera layer. This layer provides the connection between user and camera layer, which is secured by requiring user to login in web interface layer by using username and password.
+
 
