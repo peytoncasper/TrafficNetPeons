@@ -4,7 +4,7 @@ The following sections are dedicated to the Base Station Layer of this project. 
 
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/ADS diagrams/solarbatterysubsystem.png}
+ 	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/solarbatterysubsystem.png}
  \caption{Solar Battery description diagram}
 \end{figure}
 
