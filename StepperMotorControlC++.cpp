@@ -34,25 +34,17 @@ int main(void)
             return 1;
     }
     int i,halfstep,pin;
-    int controlPin[4] = {26,27,28,29}; // GPIOs for wiringPi
+    int controlPin[8] = {22,23,24,25,26,27,28,29}; // GPIOs for wiringPi
     char key = 127; 
-   pinMode (controlPin[0], OUTPUT); 
-   pinMode (controlPin[1], OUTPUT);
-   pinMode (controlPin[2], OUTPUT);
-   pinMode (controlPin[3], OUTPUT);
-   // pinMode (22, OUTPUT); // bcm(GPIO on Rpi2) 31. Set as output
-   // pinMode (23, OUTPUT); // bcm(GPIO on Rpi2) 33
-   // pinMode (24, OUTPUT); // bcm(GPIO on Rpi2) 35
-   // pinMode (25, OUTPUT); // bcm(GPIO on Rpi2) 37
-    
-    digitalWrite(controlPin[0], 0); // bring GPIOs to LOW
-    digitalWrite(controlPin[1], 0);
-    digitalWrite(controlPin[2], 0);
-    digitalWrite(controlPin[3], 0);
-    
+    for(int i = 0; i < 8; i++)
+    {
+        pinMode(controlPin[i], OUTPUT);  
+        digitalWrite(controlPin[i], 0); // bring GPIOs to LOW
+                                      
+    }
     // 1 = HIGH, 0 = LOW
     //control the speed/torque of stepper motor
-    int seq[8][4] = { {1,0,0,0},
+    int sequence[8][4] = { {1,0,0,0},
             {1,1,0,0},
             {0,1,0,0},
             {0,1,1,0},
@@ -60,57 +52,123 @@ int main(void)
             {0,0,1,1},
             {0,0,0,1},
             {1,0,0,1}} ;
-    do 
-{
-while(! _kbhit())
-{
-   	 key = getchar();
-    	if(key == 27)
-    	{
-		key = getchar();
-		if(key == 91)
-		{
-			key = getchar();
-			if(key == 65)
-			{
-            // 1 revolution = 8 cycles
-	    // gear reduction = 1/64
-	    // 8x64 = 512 cycles
-   				for(i = 0;i<512;i = i + 1)
-    				{
-            				for(halfstep = 0;halfstep<8; halfstep = halfstep + 1)
-            				{
-                    				for(pin = 0;pin<4; pin = pin + 1)
-                    				{ 
-                           				digitalWrite(controlPin[pin], seq[halfstep][pin]);
-                    				}
-    
-            					delay(1); // = 0.001ms
-            				}
-    				}
-			}
-         	}
-	}
-}
 
-} while(key != '.');   
-    
-    // 1 revolution = 8 cycles
-    // gear reduction = 1/64
-    // 8x64 = 512 cycles
-    for(i = 0;i<512;i = i + 1)
-    {
-            for(halfstep = 0;halfstep<8; halfstep = halfstep + 1)
+     while(true)
+     {
+        if(_kbhit())
+        {
+            key = getchar();
+            if(key == 27)
             {
-                    for(pin = 0;pin<4; pin = pin + 1)
+                key = getchar();
+                if(key == 91)
+                {
+                    key = getchar();
+                    if(key == 65)
                     {
-                            digitalWrite(controlPin[pin], seq[halfstep][pin]);
+                        for(i = 0;i<50;i = i + 1)
+                        {
+                                for(halfstep = 0;halfstep<8; halfstep = halfstep + 1)
+                                {
+                                        for(pin = 0;pin<4; pin = pin + 1)
+                                        { 
+                                                digitalWrite(controlPin[pin], sequence[halfstep][pin]);
+                                        }
+
+                                        delay(1); // = 0.001ms
+                                }
+                        }
                     }
-    
-            delay(1); // = 0.001ms
+                    else if(key == 66)
+                    {
+                        for(i = 0;i<50;i = i + 1)
+                        {
+                                for(halfstep =7;halfstep >= 0; halfstep = halfstep - 1)
+                                {
+                                        for(pin = 3;pin >= 0; pin = pin - 1)
+                                        { 
+                                                digitalWrite(controlPin[pin], sequence[halfstep][pin]);
+                                        }
+
+                                        delay(1); // = 0.001ms
+                                }
+                        }
+                    }
+                    else if(key == 67)
+                    {
+                        for(i = 0;i<50;i = i + 1)
+                        {
+                                for(halfstep = 0;halfstep<8; halfstep = halfstep + 1)
+                                {
+                                        for(pin = 4;pin<8; pin = pin + 1)
+                                        { 
+                                                digitalWrite(controlPin[pin], sequence[halfstep][pin]);
+                                        }
+
+                                        delay(1); // = 0.001ms
+                                }
+                        }
+                    }
+                    else if(key == 68)
+                    {
+                        for(i = 0;i<50;i = i + 1)
+                        {
+                                for(halfstep =7;halfstep >= 0; halfstep = halfstep - 1)
+                                {
+                                        for(pin = 7;pin >= 4; pin = pin - 1)
+                                        { 
+                                                digitalWrite(controlPin[pin], sequence[halfstep][pin]);
+                                        }
+
+                                        delay(1); // = 0.001ms
+                                }
+                        }
+                    }
+                }
             }
-    }
-    // once the program ends
+        }
+     }
+//         while(true)
+// {
+//         if (_kbhit())
+//         {
+//                 key = getchar();
+//                 if(key == 27)
+//                 {
+//                         key = getchar();
+//                         if(key == 91)
+//                         {
+//                                 key = getchar();
+//                                 if(key == 65)
+//                                 {
+
+//                                 }
+//                                 else if(key == 66)
+//                                 {
+
+//                                 }
+//                         }
+//                 }
+//         }
+// }
+// } while(key != '.');   
+    
+//     // 1 revolution = 8 cycles
+//     // gear reduction = 1/64
+//     // 8x64 = 512 cycles
+//     for(i = 0;i<512;i = i + 1)
+//     {
+//             for(halfstep = 0;halfstep<8; halfstep = halfstep + 1)
+//             {
+//                     for(pin = 0;pin<4; pin = pin + 1)
+//                     {
+//                             digitalWrite(controlPin[pin], seq[halfstep][pin]);
+//                     }
+    
+//             delay(1); // = 0.001ms
+//             }
+//     }
+//     // once the program ends
     digitalWrite(controlPin[0], 0); // bring all GPIOs to LOW
     digitalWrite(controlPin[1], 0);
     digitalWrite(controlPin[2], 0);
