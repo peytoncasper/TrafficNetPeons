@@ -394,7 +394,10 @@ by exp-project-lbr.ulp</description>
 <plain>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="83.82" y="38.1"/>
+<instance part="U$1" gate="G$1" x="83.82" y="38.1" smashed="yes">
+<attribute name="NAME" x="71.12" y="45.72" size="1.27" layer="95" font="vector"/>
+<attribute name="VALUE" x="63.5" y="71.755" size="1.27" layer="96" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
