@@ -1,49 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+{#<title> Login </title>#}
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
+<style>
+    .modal {
+        width: 650px;
+        height: 650px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -320px;
+        margin-top: -200px;
+    }
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+</style>
+
 </head>
 <body>
-<object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" width="640" height="360" id="vlc" events="True">
-  <param name="MRL" value="" />
-  <param name="ShowDisplay" value="True" />
-  <param name="AutoLoop" value="False" />
-  <param name="AutoPlay" value="False" />
-  <param name="Volume" value="50" />
-  <param name="toolbar" value="true" />
-  <param name="StartTime" value="0" />
-  <EMBED pluginspage="http://www.videolan.org"
-    type="application/x-vlc-plugin"
-    version="VideoLAN.VLCPlugin.2"
-    width="640"
-    height="360"
-    toolbar="true"
-    loop="false"
-    text="Waiting for video"
-    name="vlc">
-  </EMBED>
-</object>
-<script type="text/javascript">
-function getVLC(name)
-{
-    if (window.document[name])
-    {
-        return window.document[name];
-    }
-    if (navigator.appName.indexOf("Microsoft Internet")==-1)
-    {
-        if (document.embeds && document.embeds[name])
-            return document.embeds[name];
-    }
-    else // if (navigator.appName.indexOf("Microsoft Internet")!=-1)
-    {
-        return document.getElementById(name);
-    }
-}
+{#<center> <img src="http://static1.squarespace.com/static/54d90fe2e4b0a1728dab4782/t/54f5e107e4b0625e8c514983/1447185712861/?format=1500w"/> </center>#}
 
-var vlc = getVLC("vlc");
+<div class="modal fade" id="loginModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control input" id="username" placeholder="Username">
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control input" id="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control input" id="ipAddress" placeholder="IP Address">
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="login">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="jumbotron vertical-center" id="videoVLC"> <!--
+                      ^--- Added class  -->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+
+        <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" width="640" height="360" id="vlc" events="True">
+          <param name="MRL" value="" />
+          <param name="ShowDisplay" value="True" />
+          <param name="AutoLoop" value="False" />
+          <param name="AutoPlay" value="False" />
+          <param name="Volume" value="50" />
+          <param name="toolbar" value="true" />
+          <param name="StartTime" value="0" />
+          <EMBED pluginspage="http://www.videolan.org"
+            type="application/x-vlc-plugin"
+            version="VideoLAN.VLCPlugin.2"
+            width="640"
+            height="360"
+            toolbar="true"
+            loop="false"
+            text="Waiting for video"
+            name="vlc">
+          </EMBED>
+        </object>
+      </div>
+      <div class="col-md-4">
+          <button type="button" class="btn btn-default" aria-label="Up">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+          </button>
+          </br>
+          <button type="button" class="btn btn-default" aria-label="Up">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+          </button>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $(window).load(function(){
+        $('#loginModal').modal('show');
+        $("#videoVLC").hide()
+
+    });
+    $("#login").on("click", function(){
+            $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/validate_login_camera_url',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val()
+            },
+            success:function(data){
+                console.log(data)
+                $('#loginModal').modal('hide');
+                $("#videoVLC").show()
+
+
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>
+{##}
+
+<script type="text/javascript">
 
 // do something.
 // e.g. vlc.playlist.play();
 </script>
-</body>
-</html>

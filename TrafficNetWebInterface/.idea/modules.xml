@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../TrafficNetWebInterface/.idea/TrafficNet.iml" filepath="$PROJECT_DIR$/../TrafficNetWebInterface/.idea/TrafficNet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TrafficNet.iml" filepath="$PROJECT_DIR$/.idea/TrafficNet.iml" />
     </modules>
   </component>
 </project>
