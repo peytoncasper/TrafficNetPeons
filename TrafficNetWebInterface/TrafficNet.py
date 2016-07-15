@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template, request
 from flask_cors import CORS, cross_origin
-import socket
+import socket, json
 app = Flask(__name__)
 
 CORS(app)
@@ -15,9 +15,16 @@ def index():
 def validate_login_camera_url():
     username = request.args.get('username')
     password = request.args.get('password')
-    ip = socket.gethostbyname(socket.gethostname())
 
-    return ip
+    with open('config.json') as data_file:
+        data = json.load(data_file)
+        if username == data["username"] and password == data["password"]:
+            return socket.gethostbyname(socket.gethostname())
+        else:
+            return ""
+
+
+
 
 @app.route('/step_right')
 def step_right():
@@ -62,4 +69,4 @@ def step_backwards():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')

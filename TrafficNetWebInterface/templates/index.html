@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-{#<title> Login </title>#}
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -51,7 +50,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control input" id="ipAddress" placeholder="IP Address">
+                <input type="text" class="form-control input " id="ipAddress" placeholder="IP Address">
             </div>
 
         </form>
@@ -111,6 +110,9 @@
         $("#videoVLC").hide()
 
     });
+    $(".input").on("input", function(){
+        $(this).parent().removeClass("has-error")
+    })
     $("#login").on("click", function(){
             $.ajax({
             url: 'http://' + $("#ipAddress").val() + ':5000/validate_login_camera_url',
@@ -118,14 +120,25 @@
                 'username': $("#username").val(),
                 'password': $("#password").val()
             },
-            success:function(ip){
-                $('#loginModal').modal('hide');
-                $("#nameParam").attr("value", "rtsp://" + ip + ":8554/")
-                $("#vlcEmb").attr("target", "rtsp://" + ip + ":8554/")
+            success:function(ip) {
+                if (ip != "") {
+                    $('#loginModal').modal('hide');
+                    $("#nameParam").attr("value", "rtsp://" + ip + ":8554/")
+                    $("#vlcEmb").attr("target", "rtsp://" + ip + ":8554/")
 
-                $("#videoVLC").show()
+                    $("#videoVLC").show()
+                }
+                else
+                {
+                    console.log(ip)
+                    $("#username").parent().addClass("has-error")
+                    $("#password").parent().addClass("has-error")
 
+                }
 
+            },
+            error: function(){
+                $("#ipAddress").parent().addClass("has-error")
             }
         })
     })
@@ -134,10 +147,3 @@
 
 </body>
 </html>
-{##}
-
-<script type="text/javascript">
-
-// do something.
-// e.g. vlc.playlist.play();
-</script>
