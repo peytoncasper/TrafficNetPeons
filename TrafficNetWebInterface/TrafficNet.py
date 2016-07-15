@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request
 from flask_cors import CORS, cross_origin
+import socket
 app = Flask(__name__)
 
 CORS(app)
@@ -14,8 +15,9 @@ def index():
 def validate_login_camera_url():
     username = request.args.get('username')
     password = request.args.get('password')
+    ip = socket.gethostbyname(socket.gethostname())
 
-    return ""
+    return ip
 
 @app.route('/step_right')
 def step_right():
