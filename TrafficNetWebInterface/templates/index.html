@@ -123,8 +123,8 @@
             success:function(ip) {
                 if (ip != "") {
                     $('#loginModal').modal('hide');
-                    $("#nameParam").attr("value", "rtsp://" + ip + ":8554/")
-                    $("#vlcEmb").attr("target", "rtsp://" + ip + ":8554/")
+                    $("#nameParam").attr("value", "rtsp://" + $("#ipAddress").val() + ":8554/")
+                    $("#vlcEmb").attr("target", "rtsp://" + $("#ipAddress").val() + ":8554/")
 
                     $("#videoVLC").show()
                 }
