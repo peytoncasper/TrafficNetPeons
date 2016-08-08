@@ -1,15 +1,16 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
+The following sections are dedicated to the Camera Layer of this project. This layer includes Raspberry Pi Zero, database, stepper motor drivers, stepper motor, and camera module subsystems. The Camera Layer manages the actions set forth by the user in the Web Interface layer. The operating system used is Raspbian, while the programming language used is python. Besides the stepper motors components, a custom PCB board is used.
 
-\subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+\subsection{Camera Layer}
+The Raspberry Pi Zero will execute commands based on the user in the Web Interface layer. Once the user sets forth a command, the RPi Zero will execute and control the movements of the camera using the stepper motor driver to then control the stepper motors.
 
-\subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+\subsection{Camera Layer Hardware}
+Since the RPi zero has its own unique operating system, the operating system that will be used is Raspbian. 
 
-\subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+\subsection{Camera Layer Software Dependencies}
+Besides standard libraries that were installed, lwiringpi library had to be installed to allow functionality of the C++ code we were using at first to test the camera layer. Mjpeg will be used to as the video compressor since it would be the easier router for the amount of time to complete the project in the required time.The functionality is also dependent on the custom PCB stepper motor driver to control the stepper motors.
 
-\subsection{Subsystem 1}
+
+\subsection{Raspberry Pi Zero Subsystem}
 Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
 
 \begin{figure}[h!]
