@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template, request
 from flask_cors import CORS, cross_origin
-import RPIO
+import RPIO,time
 import socket, json
 app = Flask(__name__)
 
@@ -99,7 +99,7 @@ def step_right():
                     for pin in range(0, 4):
                         RPIO.output(pins[pin], sequence[halfstep][pin])
                         print "Cycle"
-                    delay(1)
+                    time.sleep(.01)
 
             for pin in pins:
                 RPIO.output(pins[pin], 0)

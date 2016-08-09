@@ -115,7 +115,7 @@
           <button type="button" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
           </button>
-          <button type="button" class="btn btn-default" aria-label="Up">
+          <button id="cameraRight" type="button" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
           </button>
           </br>
@@ -151,6 +151,25 @@
     });
     $(".input").on("input", function(){
         $(this).parent().removeClass("has-error")
+    })
+    $("#cameraRight").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/step_right',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+            },
+            dataType: 'json',
+            success:function(data) {
+{#                if (data != "") {#}
+{#                    $("#cameraTitle").text(data["title"])#}
+{#                    $("#cameraDescription").text(data["description"])#}
+{#                    $("#settingsModal").modal('hide');#}
+{##}
+{#                }#}
+            },
+
+        })
     })
     $("#saveSettings").on("click", function(){
         $.ajax({
