@@ -14,7 +14,7 @@ The above diagram illustrates graphically the interaction of the Solar Battery S
 The Solar Battery Subsystem is the second of two Subsystems that is necessary for this Architectural Design Specification but is provided entirely by TrafficNet LLC. Therefore it is assumed to be the responsibility of the vendor to provide.
 
 \subsubsection{Responsibilities}
-The Solar Battery provides the power supply for both the Wireless Communications Layer and the Camera Layer. Energy converted into 12V DC is supplied to the Raspberry Pi of the Camera Layer through a micro-USB port and similarly for the Black Box of the Wireless Communications Layer, vicariously powering all succeeding subsystems.
+The Solar Battery provides the power supply for both the Wireless Communications Layer and the Camera Layer. Solar energy converted into 12V DC is supplied to the Raspberry Pi of the Camera Layer through a micro-USB port and similarly for the Dragonfly SoM of the Wireless Communications Layer, vicariously powering all succeeding subsystems.
 
 \subsubsection{Subsystem Interfaces}
 
