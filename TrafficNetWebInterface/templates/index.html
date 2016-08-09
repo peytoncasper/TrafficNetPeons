@@ -105,11 +105,11 @@
         </div>
       </div>
       <div class="col-md-4">
-          <button type="button" style="margin-left:44px; margin-bottom:4px" class="btn btn-default" aria-label="Up">
+          <button id="cameraUp" type="button" style="margin-left:44px; margin-bottom:4px" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
           </button>
           </br>
-          <button type="button" class="btn btn-default" aria-label="Up">
+          <button id="cameraLeft" type="button" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
           </button>
           <button type="button" class="btn btn-default" aria-label="Up">
@@ -119,7 +119,7 @@
               <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
           </button>
           </br>
-          <button type="button" style="margin-left:44px; margin-top:4px" class="btn btn-default" aria-label="Up">
+          <button id="cameraDown" type="button" style="margin-left:44px; margin-top:4px" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
           </button>
           </br>
@@ -161,16 +161,57 @@
             },
             dataType: 'json',
             success:function(data) {
-{#                if (data != "") {#}
-{#                    $("#cameraTitle").text(data["title"])#}
-{#                    $("#cameraDescription").text(data["description"])#}
-{#                    $("#settingsModal").modal('hide');#}
-{##}
-{#                }#}
+
             },
 
         })
     })
+    $("#cameraLeft").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/step_left',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+            },
+            dataType: 'json',
+            success:function(data) {
+
+            },
+
+        })
+    })
+    $("#cameraUp").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/step_forward',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+            },
+            dataType: 'json',
+            success:function(data) {
+
+            },
+
+        })
+    })
+    $("#cameraDown").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/step_backwards',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+            },
+            dataType: 'json',
+            success:function(data) {
+
+            },
+
+        })
+    })
+
+
+
+
     $("#saveSettings").on("click", function(){
         $.ajax({
             url: 'http://' + $("#ipAddress").val() + ':5000/save_settings',

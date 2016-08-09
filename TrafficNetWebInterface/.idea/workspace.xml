@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrafficNet.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrafficNet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrafficNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="821">
-              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+            <state relative-caret-position="245">
+              <caret line="161" column="25" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2934">
-              <caret line="163" column="0" selection-start-line="163" selection-start-column="2" selection-end-line="168" selection-end-column="19" />
+            <state relative-caret-position="614">
+              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -86,9 +86,9 @@
         <option value="$PROJECT_DIR$/config" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/TrafficNet.py" />
+        <option value="$PROJECT_DIR$/TrafficNet.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/TrafficNet.py" />
-        <option value="$PROJECT_DIR$/TrafficNet.py" />
       </list>
     </option>
   </component>
@@ -700,14 +700,6 @@
     </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py" />
     <entry file="file://$PROJECT_DIR$/templates/CSE4317_WebInterface.html" />
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2934">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="2" selection-end-line="168" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -726,11 +718,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TrafficNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        <state relative-caret-position="245">
+          <caret line="161" column="25" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="25" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

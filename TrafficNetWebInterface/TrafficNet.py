@@ -115,7 +115,7 @@ def step_right():
         data_file.write(json.dumps(data))
 
         return ""
-
+@app.route('/step_left')
 def step_left():
     username = request.args.get('username')
     password = request.args.get('password')
@@ -158,6 +158,8 @@ def step_left():
         return ""
 
     return ""
+
+@app.route('/step_forward')
 def step_forward():
     username = request.args.get('username')
     password = request.args.get('password')
@@ -200,6 +202,7 @@ def step_forward():
         return ""
 
     return ""
+@app.route('/step_backwards')
 def step_backwards():
     username = request.args.get('username')
     password = request.args.get('password')
