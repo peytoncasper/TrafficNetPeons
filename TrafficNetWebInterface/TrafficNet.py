@@ -25,7 +25,8 @@ def validate_login_camera_url():
                 "ipAddress":socket.gethostbyname(socket.gethostname()),
                 "title": data["title"],
                 "description": data["description"],
-                "direction": ""
+                "horizontal_direction": (int(data["horizontal_orientation"]) * 22.5),
+                "vertical_direction": (int(data["vertical_orientation"]) * 22.5)
             })
         else:
             return ""
