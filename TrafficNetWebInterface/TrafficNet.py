@@ -81,7 +81,7 @@ def step_right():
     with open('config.json') as data_file:
         data = json.load(data_file)
         if username == data["username"] and password == data["password"]:
-            pins = {22,23,24,25,26,27,28,29}
+            pins = {12,16,20,21,6,13,19,26}
             for pin in pins:
                 RPIO.setup(pin, RPIO.OUT)
                 RPIO.output(pin, False)
