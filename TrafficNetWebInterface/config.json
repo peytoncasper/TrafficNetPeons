@@ -1,1 +1,1 @@
-{"username": "traffic", "description": "Facing I-20 N/S", "title": "Camera 10", "horizontal_orientation": 0, "password": "net", "vertical_orientation": 0}
+{"username": "traffic", "vertical_orientation": 1, "title": "Camera 10", "horizontal_orientation": 0, "password": "net", "description": "Facing I-20 N/S"}

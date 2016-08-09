@@ -6420,3 +6420,33 @@ a=fmtp:96 packetization-mode=1
 192.168.1.254 - - [18/Jul/2016 14:11:08] "GET /validate_login_camera_url?username=traffic&password=net HTTP/1.1" 200 -
 [b3d04218] core stream out debug: net: connecting to [192.168.1.218]:59718
 [b3d04218] core stream out debug: net: connecting to [192.168.1.218]:59719 from [192.168.1.220]:41717
+Traceback (most recent call last):
+  File "TrafficNet.py", line 1, in <module>
+    from flask import Flask
+  File "/usr/local/lib/python2.7/dist-packages/flask/__init__.py", line 19, in <module>
+    from jinja2 import Markup, escape
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/__init__.py", line 33, in <module>
+    from jinja2.environment import Environment, Template
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 14, in <module>
+    from jinja2.defaults import BLOCK_START_STRING, \
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/defaults.py", line 31, in <module>
+    from jinja2.filters import FILTERS as DEFAULT_FILTERS
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/filters.py", line 19, in <module>
+    from jinja2.runtime import Undefined
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/runtime.py", line 10, in <module>
+    """
+KeyboardInterrupt
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+192.168.0.107 - - [09/Aug/2016 18:13:27] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:28] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:29] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:30] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:30] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:31] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:32] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:33] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:33] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:34] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:13:35] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:15:26] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
+192.168.0.107 - - [09/Aug/2016 18:15:27] "GET /step_left?username=traffic&password=net HTTP/1.1" 200 -
