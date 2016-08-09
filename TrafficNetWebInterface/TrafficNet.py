@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import render_template, request
 from flask_cors import CORS, cross_origin
-import RPIO,time
+from gpiozero import LED
+import time
 import socket, json
 app = Flask(__name__)
 
@@ -77,32 +78,35 @@ def step_right():
 
     username = request.args.get('username')
     password = request.args.get('password')
-
+    
     with open('config.json') as data_file:
         data = json.load(data_file)
         if username == data["username"] and password == data["password"]:
-            pins = {12,16,20,21,6,13,19,26}
+            pins = [LED(12), LED(16), LED(20), LED(21)]
             for pin in pins:
-                RPIO.setup(pin, RPIO.OUT)
-                RPIO.output(pin, False)
-            sequence = {{1, 0, 0, 0},
-                        {1, 1, 0, 0},
-                        {0, 1, 0, 0},
-                        {0, 1, 1, 0},
-                        {0, 0, 1, 0},
-                        {0, 0, 1, 1},
-                        {0, 0, 0, 1},
-                        {1, 0, 0, 1}};
+                pin.off()
+            sequence = [[1, 0, 0, 0],
+                        [1, 1, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 1, 1, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 1, 1],
+                        [0, 0, 0, 1],
+                        [1, 0, 0, 1]];
 
-            for i in range(0, 50):
+            for i in range(0, 32):
                 for halfstep in range(0, 8):
-                    for pin in range(0, 4):
-                        RPIO.output(pins[pin], sequence[halfstep][pin])
-                        print "Cycle"
-                    time.sleep(.01)
+                    for pin in range(0, len(pins)):
+                        if sequence[halfstep][pin] == 1:
+                            pins[pin].on()
+                        else:
+                            pins[pin].off()
+                        
+                        
+                    time.sleep(.001)
 
             for pin in pins:
-                RPIO.output(pins[pin], 0)
+                pin.off()
                 print "Setting pin low"
         else:
             return ""
