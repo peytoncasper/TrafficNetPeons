@@ -62,6 +62,36 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<div class="modal fade" id="settingsModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control input" id="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input" id="description" placeholder="Description">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="saveSettings">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <div class="jumbotron vertical-center" style="background-color:#ffffff" id="videoVLC"> <!--
                       ^--- Added class  -->
   <div class="container">
@@ -70,15 +100,8 @@
 
 
         <div id="cctv-container">
-            <img src="http://192.168.1.220:8080/stream/video.mjpeg" alt="image">
-
-{#          <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" codebase="http://downloads.videolan.org/pub/videolan/vlc/latest/win32/axvlc.cab" id="vlc" events="True" width="640" height="480">#}
-{#            <param id="nameParam" name="Src" value=""/>#}
-{#            <param name="ShowDisplay" value="True"/>#}
-{#            <param name="AutoLoop" value="False"/>#}
-{#            <param name="AutoPlay" value="True"/>#}
-{#            <embed id="vlcEmb" type="application/x-google-vlc-plugin" version="VideoLAN.VLCPlugin.2" autoplay="yes" loop="no" target="rtsp://192.168.1.220:8554/" width="640" height="480"/>#}
-{#          </object>#}
+            <h3 id="cameraTitle">Title</h3>
+            <img src="" id="mjpeg_stream" alt="image">
         </div>
       </div>
       <div class="col-md-4">
@@ -99,6 +122,20 @@
           <button type="button" style="margin-left:44px; margin-top:4px" class="btn btn-default" aria-label="Up">
               <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
           </button>
+          </br>
+          </br>
+
+          <label>Description:</label>
+          <div id="cameraDescription">Pointing at I-20 North</div>
+
+          <label>Direction:</label>
+          <div id="cameraDirection">Pointing at I-20 North</div>
+
+          </br>
+          <button type="button" style="margin-left:88px; " class="btn btn-default" aria-label="Up" id="settingsButton">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+          </button>
+
       </div>
   </div>
 </div>
@@ -115,6 +152,45 @@
     $(".input").on("input", function(){
         $(this).parent().removeClass("has-error")
     })
+    $("#saveSettings").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/save_settings',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+                'title': $("#title").val(),
+                'description': $("#description").val()
+            },
+            dataType: 'json',
+            success:function(data) {
+                if (data != "") {
+                    $("#cameraTitle").text(data["title"])
+                    $("#cameraDescription").text(data["description"])
+                    $("#settingsModal").modal('hide');
+
+                }
+            },
+
+        })
+    })
+    $("#settingsButton").on("click", function(){
+        $.ajax({
+            url: 'http://' + $("#ipAddress").val() + ':5000/get_title_description',
+            data: {
+                'username': $("#username").val(),
+                'password': $("#password").val(),
+            },
+            dataType: 'json',
+            success:function(data) {
+                if (data != "") {
+                    $("#title").val(data["title"])
+                    $("#description").val(data["description"])
+                }
+            },
+
+        })
+        $("#settingsModal").modal('show');
+    })
     $("#login").on("click", function(){
             $.ajax({
             url: 'http://' + $("#ipAddress").val() + ':5000/validate_login_camera_url',
@@ -122,18 +198,18 @@
                 'username': $("#username").val(),
                 'password': $("#password").val()
             },
-            success:function(ip) {
-                if (ip != "") {
+            dataType: 'json',
+            success:function(data) {
+                if (data != "") {
                     $('#loginModal').modal('hide');
-
-                    $("#nameParam").attr("value", "rtsp://" + $("#ipAddress").val() + ":8554/")
-                    $("#vlcEmb").attr("target", "rtsp://" + $("#ipAddress").val() + ":8554/")
+                    $("#cameraDescription").text(data["description"]);
+                    $("#cameraTitle").text(data["title"]);
+                    $("#mjpeg_stream").attr("src", "http://" + $("#ipAddress").val() + ":8080/stream/video.mjpeg")
 
                     $("#videoVLC").show()
                 }
                 else
                 {
-                    console.log(ip)
                     $("#username").parent().addClass("has-error")
                     $("#password").parent().addClass("has-error")
 
