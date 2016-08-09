@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request
 from flask_cors import CORS, cross_origin
+import RPIO
 import socket, json
 app = Flask(__name__)
 
@@ -81,9 +82,9 @@ def step_right():
         data = json.load(data_file)
         if username == data["username"] and password == data["password"]:
             pins = {22,23,24,25,26,27,28,29}
-            # for pin in pins:
-                # RPIO.setup(pin, RPIO.OUT)
-                # RPIO.output(pin, False)
+            for pin in pins:
+                RPIO.setup(pin, RPIO.OUT)
+                RPIO.output(pin, False)
             sequence = {{1, 0, 0, 0},
                         {1, 1, 0, 0},
                         {0, 1, 0, 0},
@@ -96,12 +97,12 @@ def step_right():
             for i in range(0, 50):
                 for halfstep in range(0, 8):
                     for pin in range(0, 4):
-                        # RPIO.output(pins[pin], sequence[halfstep][pin])
+                        RPIO.output(pins[pin], sequence[halfstep][pin])
                         print "Cycle"
-                    # delay(1)
+                    delay(1)
 
             for pin in pins:
-                # RPIO.output(pins[pin], 0)
+                RPIO.output(pins[pin], 0)
                 print "Setting pin low"
         else:
             return ""
