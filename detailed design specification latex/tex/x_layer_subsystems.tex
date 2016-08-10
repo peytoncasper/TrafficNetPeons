@@ -13,11 +13,15 @@ Besides standard libraries that were installed, lwiringpi library had to be inst
 \subsection{Raspberry Pi Zero Subsystem}
 The Raspberry Pi Zero is controlled by user input in the web interface layer, which is then responsible for controlling all other subsystems in the camera layer.
 
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
-\end{figure}
+
+\begin{figure}[h!] 
+ 	\centering 
+  	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/raspberrypisubsystem.png} 
+ \caption{Raspberry Pi Subsystem Description} 
+\end{figure} 
+
+
+
 
 \subsubsection{Raspberry Pi Subsystem Hardware}
 The Rpi Zero has a 1Ghz single-core CPU, 512MB RAM, micro USB powered, and a 40 pin header HAT.
@@ -37,20 +41,20 @@ For testing purposes and programming, the Raspberry Pi Zero is connected to a mo
 \subsection{Database Subsystem}
 The Rpi Zero has a wireless network card for internet connectivity, so all the information sent and received by the Raspberry Pi Zero is stored in the database, which is used to store logs of important information.
 
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+\begin{figure}[h!] 
+ 	\centering 
+  	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/databasesubsystem.png} 
+ \caption{Database Subsystem Description} 
 \end{figure}
 
 
 \subsection{Stepper Motor Driver Subsystem}
 The stepper motor driver is essentially software installed on the Raspberry Pi Zero to control the stepper motors and allow the stepper motors to work.
 
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+\begin{figure}[h!] 
+ 	\centering 
+  	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/steppermotordriversubsystem.png} 
+ \caption{Stepper Motor Driver Subsystem Description} 
 \end{figure}
 
 
@@ -65,11 +69,10 @@ The stepper motor driver uses Python programming language to control the stepper
 \subsection{Stepper Motor Subsystem}
 The stepper motor driver is essentially software installed on the RPi Zero to control the stepper motors. The stepper motors are connected to the GPIO in the RPi Zero through wires. The stepper motors are controlled through the user web interface. The stepper motors can pan and tilt the camera module. 
 
-
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+\begin{figure}[h!] 
+ 	\centering 
+  	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/steppermotorsubsystem.png} 
+ \caption{Stepper Motor Subsystem Description} 
 \end{figure}
 
 \subsubsection{Stepper Motor Subsystem Hardware}
@@ -88,10 +91,10 @@ A stepper motor is a brushless, synchronous electric motor that converts digital
 \subsection{Camera Module Subsystem}
 The camera module is controlled by the stepper motor, which moves the camera (pan and tilt) certain degrees based on user interactions.The camera module is responsible for capturing images of the surrounding landscape. The camera module will provide live feedback of its surroundings when the user request the information from the web interface.
 
-\begin{figure}[h!]
-	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
- \caption{Example subsystem description diagram}
+\begin{figure}[h!] 
+ 	\centering 
+  	\includegraphics[width=0.60\textwidth]{images/ADSdiagrams/cameramodulesubsystem.png} 
+ \caption{Camera Module Subsystem Description} 
 \end{figure}
 
 \subsubsection{Camera Module Subsystem Hardware}
