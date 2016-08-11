@@ -1,13 +1,13 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
+The following sections are dedicated to the Wireless Communications Layer of this project. This layer includes the Ethernet Subsystem and the Black Box Subsystem. The Wireless Communications Layer manages the communications demands between the Web Interface Layer and the Camera Layer via UDP transport protocol over a wireless network provided the consumer by TrafficNet LLC.
 
-\subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+\subsection{Wireless Communications Layer}
+User issued commands will be sent from the Web Interface Layer to the Black Box Subsystem via UDP/IP Transfer Protocol, and subsequently forwarded by the Ethernet Subsystem to the Raspberry Pi Zero for execution.   
 
-\subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+\subsection{Wireless Communications Layer Hardware}
+Specifically, the Wireless Communications Layer is comprised of a TBD Wireless Network Adapter of TrafficNet, LLC's choosing and the Ethernet Adapter connected to the Raspberry Pi Zero. The two components work in tandem to provide a means through which the Raspberry Pi Zero can establish communication with the Web Interface Layer.
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+It is necessary for the appropriate software to be present on the Raspberry Pi Zero to provide the end connection for the video streaming server to operate through. This software runs the UDP/IP Transfer Protocol which allows the video to be streamed wirelessly to the Web Interface Layer. It is the TrafficNet.py program described in the Camera Layer.
 
 \subsection{Subsystem 1}
 Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
