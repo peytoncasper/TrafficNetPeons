@@ -27,14 +27,14 @@
 
 %%% Definitions
 \definecolor{accentcolor}{rgb}{0.0,0.0,0.5} 
-\newcommand{\teamname}{Team Name}
-\newcommand{\productname}{Product Name}
-\newcommand{\coursename}{CSE 4317: Senior Design II}
-\newcommand{\semester}{Spring 2016}
+\newcommand{\teamname}{TrafficNetPeons}
+\newcommand{\productname}{Product Name: Hawkeye}
+\newcommand{\coursename}{CSE 4316: Senior Design II}
+\newcommand{\semester}{Summer 2016}
 \newcommand{\docname}{Detailed Design Specification}
 \newcommand{\department}{Department of Computer Science \& Engineering}
 \newcommand{\university}{The University of Texas at Arlington}
-\newcommand{\authors}{Alan Turing \\ Grace Hopper \\ John Von Neumann \\ Ada Lovelace \\ Charles Babbage}
+\newcommand{\authors}{Peyton Casper \\ Rabin Dhaubanjar \\ Kyle Edelmann \\ Jose Hernandez \\ Ruchitha Thalakola}
 
 %%% Headers and footers
 \usepackage{fancyhdr}
@@ -70,13 +70,14 @@
 \vspace{0.5 in}
 \begin{figure}[h!]
 	\centering
-   	\includegraphics[width=0.60\textwidth]{images/test_image}
+   	\includegraphics[width=0.40\textwidth]{images/tp_logo.jpg}
 \end{figure}
 \vspace{0.5 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
 \vspace{0.5 in}
 {\centering \large \sc \textbf{\authors} \par}
 \newpage
+
 
 
 %\vspace{1 in}
@@ -112,13 +113,16 @@
 %\section{Subsystem Definitions \& Data Flow}
 %\input{tex/data_flow.tex}
 \newpage
-\section{X Layer Subsystems}
+\section{Base Station Layer Subsystems}
+\input{tex/w_layer_subsystems.tex}
+\newpage
+\section{Camera Layer Subsystems}
 \input{tex/x_layer_subsystems.tex}
 \newpage
-\section{Y Layer Subsystems}
+\section{Wireless Communications Layer Subsystems}
 \input{tex/y_layer_subsystems.tex}
 \newpage
-\section{Z Layer Subsystems}
+\section{Web Interface Layer Subsystems}
 \input{tex/z_layer_subsystems.tex}
 \newpage
 \section{Appendix A}

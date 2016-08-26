@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Vision</h1
+<p>TrafficNet, LLC is a young Limited Liability Company which has made headway in the traffic monitoring industry with the BAT-433 which, uses Bluetooth technology to calculate real-time traffic analytics, including travel times, speeds, origins and destinations of local commuters. As a subsidiary of TrafficNet, our group has accepted a role in the history of our parent company with an innovative solution to their latest ambition, the secure monitoring of even the most remote stretches of Texas highways through an affordable and low power camera. </p>
+
+<h1>Mission</h1
+<p>TrafficNet, LLC is dedicated to making the flow of traffic safer, smarter, and simpler to manage. Our team is engaged in the development of the next generation of traffic monitoring camera modules to be mass produced and field deployed in a broad spectrum of outdoor environments to assist traffic managers and the millions of drivers on the roads each day. Through creative innovation and meticulous design,TrafficNetPeons delivers high-quality products and top-notch service. Let us help change the way you see traffic. </p>
+
+<h1>Accomplishments</h1
+<p>
+Less than 5 watts</br>
+
+Less than $200</br>
+
+Supports the functionalities of competitors products</br>
+
+Ready to be commercialized </p>
+
+<h1>Hardware</h1
+<p>
+Raspberry Pi Zero</br>
+
+Stepper Motors</br>
+
+Stepper Motors Drivers</br>
+
+Camera Module</p>
+
+<h1>Software</h1
+<p>
+Implemented as a web interface</br>
+
+Frontend Framework: Twitter Bootstrap</br>
+
+Stream: UV4L</br>
+
+Languages: Python, HTML, CSS,  and JavaScript</p>
+
+<h1>Future Work</h1
+<p>
+Auto-zoom functionality</br>
+
+Heater feature on camera chassis</br>
+
+Multi-stream support on web interface</p>
+
+<video width="1920" height="1080" controls>
+  <source src="20160817_085534_42449397497135.mp4" type="video/mp4">
+</video>
+
+</body>
+</html>
+
